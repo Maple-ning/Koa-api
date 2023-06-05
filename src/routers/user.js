@@ -1,24 +1,19 @@
 const router = require("koa-router")();
+const controller = require('../controllers/user');
 
-router.get("/", async (ctx) => {
-  ctx.body = "我是用户接口";
-});
+// 查
+router.get('/', controller.find);
 
-// 动态路由
-router.get("/:id", async (ctx) => {
-  ctx.body = `动态路由用户接口id：${ctx.params.id}`;
-});
+// 查 动态路由
+router.get('/:id', controller.detail);
 
-router.post("/", async (ctx) => {
-  ctx.body = ctx.request.body;
-});
+// 增
+router.post('/', controller.add);
 
-router.put("/:id", async (ctx) => {
-  ctx.body = `PUT: ${ctx.params.id}`;
-});
+// 改
+router.put('/:id', controller.update);
 
-router.del("/:id", async (ctx) => {
-  ctx.body = `DEL: ${ctx.params.id}`;
-});
+// 删
+router.del('/:id', controller.delete);
 
 module.exports = router;

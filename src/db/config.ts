@@ -1,11 +1,11 @@
 import { User } from "../entity/user";
 
 export const mysqlLogin = {
-  host: "127.0.0.1",
+  host: "localhost",
   port: 3306,
-  username: "用户名",
-  password: "密码",
-  database: "库名称",
+  username: "root",
+  password: "Ning99..",
+  database: "koa1",
   entities: [User],
   synchronise: true,
   logging: false,

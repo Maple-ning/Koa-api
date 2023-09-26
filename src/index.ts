@@ -27,6 +27,8 @@ AppDataSource.initialize().then(() => {
   app.listen(1314, () => {
     console.log("server is running at http://localhost:1314");
   });
+}).catch((err)=>{
+  console.log(err);
 });
 
 export { AppDataSource };
